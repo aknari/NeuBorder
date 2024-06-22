@@ -578,10 +578,10 @@ body {
 .external-link {
   text-decoration: none !important;
   background-color: var(--color-primary-lighter);
-  margin-right: 2px;
+  margin-right: 0px;
   margin-left: 1px;
-  padding-right: 17px;
-  padding-left: 5px;
+  padding-right: 0px;
+  padding-left: 0px;
   border-radius: var(--button-radius-medium);
   box-shadow: var(--shadow);
   display: inline-flex;
@@ -596,6 +596,17 @@ body {
 .external-link:active {
   box-shadow: var(--shadow-active);
 }
+.external-link:after {
+  content: "\e809";
+  font-family: var(--its);
+  padding-left: 3px;
+  display: inline-flex;
+  font-size: inherit;
+  opacity: 0;
+  font-weight: 100 !important;
+  font-style: normal !important;
+}
+
 /* Adds Neumorphic styling to the "Copy Code" button */
 .markdown-rendered button.copy-code-button {
   border-radius: var(--button-radius-medium);
@@ -611,8 +622,8 @@ body {
 .markdown-source-view.mod-cm6 .code-block-flair {
   box-shadow: var(--shadow);
   border-radius: var(--button-radius-medium);
-  height: 35px;
-  width: 35px;
+  right: 5px;
+  top: 5px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -700,40 +711,45 @@ pre {
 }
 /* Adds a bar underneath content headers */
 /* Note that var(--background-tertiary) needs to be defined in the theme) */
-h1 {
+
+.cm-header-1 {
   position: relative;
   padding-bottom: 1rem;
-  /* Adjust the space between the header text and the bar */
 }
-h1::after {
+
+.cm-header-1::after {
   content: '';
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 1.3ex;
   left: 0;
-  width: 100%;
+  width: 150%;
   /* Adjust the width of the bar */
-  height: 2px;
+  height: 1.2px;
   /* Adjust the thickness of the bar */
-  background-color: var(--background-tertiary);
+  background-color: black;
+  opacity: 70%;
   /* Adjust the color of the bar */
 }
-h2 {
+
+.cm-header-2 {
   position: relative;
   padding-bottom: 1rem;
   /* Adjust the space between the header text and the bar */
 }
-h2::after {
+
+.cm-header-2::after {
   content: '';
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 1.3ex;
   left: 0;
-  width: 100%;
+  width: 140%;
   /* Adjust the width of the bar */
-  height: 2px;
+  height: 1px;
   /* Adjust the thickness of the bar */
-  background-color: var(--background-tertiary);
+  background-color: black;
+  opacity: 40%;
   /* Adjust the color of the bar */
 }
 /* Stops ugly scroll bars from being shown in the left settings panel */
